@@ -9,10 +9,10 @@ func GetProducerConfig(broker string, retries int) *kafka.ConfigMap {
 		"bootstrap.servers": broker,
 		"acks":              "all",
 		"retries":           retries,
-		"security.protocol": "SASL_PLAINTEXT",
+		"security.protocol": "SASL_SSL",
         "sasl.mechanism":    "PLAIN",
         "sasl.username":     "admin",
         "sasl.password":     "admin-secret",
-		"enable.ssl.certificate.verification": false,
+		"ssl.ca.location":   "/app/certs/ca.crt",
 	}
 }

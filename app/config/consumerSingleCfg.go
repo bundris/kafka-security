@@ -18,9 +18,10 @@ func GetSingleConsumerConfig(broker, group string) *kafka.ConfigMap {
 		"group.id":           group,
 		"auto.offset.reset":  "earliest",
 		"enable.auto.commit": true,
-		"security.protocol": "SASL_PLAINTEXT",
+		"security.protocol": "SASL_SSL",
 		"sasl.mechanism":    "PLAIN",
         "sasl.username":     user,
         "sasl.password":     password,
+		"ssl.ca.location":   "/app/certs/ca.crt",
 	}
 }

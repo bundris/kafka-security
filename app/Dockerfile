@@ -26,6 +26,6 @@ librdkafka1 \
 && rm -rf /var/lib/apt/lists/*
 # Копируем скомпилированное приложение из builder
 COPY --from=builder /app/main .
-
+COPY --from=builder /app/certs ./certs
 # Запуск приложения
 CMD ["./main"]
